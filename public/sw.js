@@ -11,3 +11,10 @@ async function impl(e) {
   }
 }
 self.addEventListener("fetch", (e) => e.respondWith(impl(e))); // Eseményre feliratkozás
+
+self.addEventListener("push", (e) => {
+        const options = {
+            body: e.data?.text() ?? "",
+        }
+        e.waitUntil(self.registration.showNotification("Push Notification", options));
+    });
