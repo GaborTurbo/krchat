@@ -8,6 +8,8 @@ import { useEffect, useState } from "preact/hooks";
 import { chatService } from "./ChatService";
 import "./Pwa"
 
+Notification.requestPermission
+
 export function App() {
 	// let [loggedIn, setLoggedIn] = useState(false)
 	let [renderCount, setRenderCount] = useState(1);
